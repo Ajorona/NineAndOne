@@ -1,0 +1,24 @@
+
+.Map {
+    height: 500px;
+    width: 700px;
+    background: grey;
+}
+
+.MapContainer {
+  position: absolute;
+  top: 45px;
+  left: 70px;
+}
+
+.ColGroup {
+  position: absolute;
+  top: 120px;
+  right: 80px;
+}
+
+.RowGroup {
+  position: absolute;
+  top: 555px;
+  left: 160px;
+}

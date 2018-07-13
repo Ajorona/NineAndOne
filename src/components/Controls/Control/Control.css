@@ -1,0 +1,14 @@
+.Horizontal {
+    background-color: DarkGreen;
+    color: Snow;
+}
+
+.Vertical {
+    background-color: DarkSlateBlue;
+    color: Snow;
+}
+
+.Active {
+    background-color: Snow;
+    color: DarkSlateGray;
+}

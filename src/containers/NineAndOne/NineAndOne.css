@@ -1,0 +1,39 @@
+
+.AppContainer {
+  position: relative;
+  height: 625px;
+  width: 1000px;
+}
+
+.Instructions {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.Instructions:hover {
+  color: white;
+}
+
+.ColGroup {
+  position: absolute;
+  top: 120px;
+  right: 80px;
+}
+
+.RowGroup {
+  position: absolute;
+  top: 555px;
+  left: 160px;
+}
+
+.MapContainer {
+  position: absolute;
+  top: 45px;
+  left: 70px;
+}
+
+.WeatherContainer {
+  width: 760px;
+  margin: 0 auto;
+}

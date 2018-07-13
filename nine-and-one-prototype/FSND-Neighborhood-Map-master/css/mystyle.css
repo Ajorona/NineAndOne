@@ -1,0 +1,23 @@
+.navbar{
+    margin-bottom: 0px !important;
+    position: absolute;
+}
+
+.weather-icon {
+    float: left;
+    height: 42px;
+    width: 50px;
+}
+
+#map {
+    height: 100vh;
+    width: 100%;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable span {
+    cursor: pointer;
+}

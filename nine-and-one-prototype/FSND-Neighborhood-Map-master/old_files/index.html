@@ -1,0 +1,92 @@
+<html>
+  <style>
+      header {
+        background-image: url();
+        background-size: 100% 100%;
+        height = 267px;
+        width = 967px;
+      }
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+  </style>
+  <head>
+    <script type="text/javascript" src="static/js/api.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" src="bootstrap.css">
+  </head>
+  <body>
+  <header>
+      <h1>Nine And One</h1>
+      <h2>Nine Bay Area Counties and Santa Cruz</h2>
+  </header>
+  <main>
+    <section>
+        <div class="row">
+            <div class="col-md-8">Abstract (from wikipedia)</div>
+            <div class="col-md-4">NOAA WEATHER API
+            </div>
+        </div>
+        <div class="row">
+          <select name="Choose a Region">
+            <option value="Alameda">Alameda</option>
+            <option value="Contra Costa">Contra Costa</option>
+            <option value="Marin">Marin</option>
+            <option value="Napa">Napa</option>
+            <option value="San Francisco">San Francisco</option>
+            <option value="San Mateo">San Mateo</option>
+            <option value="Santa Clara">Santa Clara</option>
+            <option value="Solano">Solano</option>
+            <option value="Sonoma">Sonoma</option>
+            <option value="Santa Cruz">Santa Cruz</option>
+          </select>
+        </div>
+    </section>
+    <div id="map"></div>
+    <div id="image">
+       
+    </div>
+  </section>
+  </body>
+  <script>
+      function initMap() {
+        var uluru = {lat: 37.775, lng:-122.419 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-V5MwTT7Hu-yP3P6JFD5ACLS2M1aiTyM&callback=initMap">
+    </script>
+    <script>
+            
+             https://www.ncdc.noaa.gov/cdo-web/api/v2/
+
+
+
+
+
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+        url += '?' + $.param({
+          'api-key': "878139c3c6844fac94b815b3a4698c03",
+          'q': "Alameda Creek"
+        });
+        $.ajax({
+          url: url,
+          method: 'GET',
+        }).done(function(result) {
+          console.log(result);
+        }).fail(function(err) {
+          throw err;
+        });
+    </script>
+</html>
