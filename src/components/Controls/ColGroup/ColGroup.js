@@ -10,7 +10,7 @@ const ColGroup = (props) => {
           vertical={true}
           key={elem.name}
           label={elem.name}
-          toggle={() => props.handleToggleCounty(elem.name)} />
+          toggle={() => props.toggle(elem.name)} />
       )}
     </div>
   )

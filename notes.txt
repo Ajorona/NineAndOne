@@ -1,0 +1,5 @@
+In Redux store keep:
+  - counties
+  - regions
+  - API Data (in array)
+  -

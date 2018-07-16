@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import axios from 'axios';
+
+
 class Statistics extends Component {
     state = {
       loading: false,
       instructions: false,
       regionsActive: false,
       countiesActive: false,
-
-      counties: [
-        {name: 'Alameda', active: false},
-        {name: 'Contra Costa', active: false},
-        {name: 'Marin', active: false},
-        {name: 'Napa', active: false},
-        {name: 'San Francisco', active: true},
-        {name: 'San Mateo', active: false},
-        {name: 'Santa Clara', active: false},
-        {name: 'Santa Cruz', active: false},
-        {name: 'Solano', active: false},
-        {name: 'Sonoma', active: false},
-      ],
 
       regions: [
         {name: 'North Bay', includes: ['\'Marin\'', '\'Sonoma\'', '\'Napa\'', '\'Solano\''], active: false},
@@ -28,9 +20,23 @@ class Statistics extends Component {
       ]
     }
 
+    componentDidMount () {
+        axios.get('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => {
+                console.log(response);
+            });
+    }
+
     render() {
         return <h2>Statistics</h2>
     }
 }
 
-export default Statistics;
+function mapStateToProps (state) {
+    return {
+        counties: state.counties,
+        regions: state.regions
+    }
+}
+
+export default connect(mapStateToProps)(Statistics);

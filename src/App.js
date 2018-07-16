@@ -1,15 +1,22 @@
 import React, { Component } from 'react';
-import './App.css';
-
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import { BrowserRouter } from 'react-router-dom';
 import NineAndOne from './containers/NineAndOne/NineAndOne';
+
+import rootReducer from './reducers'
+import './App.css';
+
+const store = createStore(rootReducer);
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <NineAndOne />
-      </BrowserRouter>
+      <Provider store={store} >
+          <BrowserRouter>
+                <NineAndOne />
+          </BrowserRouter>
+      </Provider>
     );
   }
 }

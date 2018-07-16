@@ -1,39 +1,31 @@
 
-.AppContainer {
-  position: relative;
-  height: 625px;
-  width: 1000px;
+.Display {
+    height: 700px;
+    width: 700px;
+    background-color: black;
 }
 
-.Instructions {
-  border: none;
-  cursor: pointer;
-  outline: none;
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 400px) {
+    .Display {
+        height: 200px;
+        width: 200px;
+        background-color: grey;
+    }
 }
 
-.Instructions:hover {
-  color: white;
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .Display {
+        height: 500px;
+        width: 500px;
+        background-color: black;
+    }
 }
 
-.ColGroup {
-  position: absolute;
-  top: 120px;
-  right: 80px;
-}
-
-.RowGroup {
-  position: absolute;
-  top: 555px;
-  left: 160px;
-}
-
-.MapContainer {
-  position: absolute;
-  top: 45px;
-  left: 70px;
-}
-
-.WeatherContainer {
-  width: 760px;
-  margin: 0 auto;
+/* Hide Desktop buttons */
+@media (max-width: 700px) {
+    .DesktopButtons {
+        display: none;
+    }
 }

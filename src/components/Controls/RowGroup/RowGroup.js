@@ -10,7 +10,7 @@ const RowGroup = (props) => {
           vertical={false}
           key={elem.name}
           label={elem.name}
-          toggle={() => props.handleToggleRegion(elem.name)} />
+          toggle={() => props.toggle(elem.name)} />
       )}
     </div>
   )

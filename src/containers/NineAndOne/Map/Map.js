@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 import classes from './Map.css';
-
-import Aux from '../../../hoc/Aux/Aux';
-import ColGroup from '../../../components/Controls/ColGroup/ColGroup';
-import RowGroup from '../../../components/Controls/RowGroup/RowGroup';
 
 /* global google */
 
-const MAP_API_KEY = 'AIzaSyDBp5HKeZtn-TnCjdOYtUOvQYK1K86QIBc';
-const FUSION_API_KEY = 'AIzaSyD2aesWTqcU3wW94ELZwREjfePGhNTn8oc';
+// const MAP_API_KEY = 'AIzaSyDBp5HKeZtn-TnCjdOYtUOvQYK1K86QIBc';
+// const FUSION_API_KEY = 'AIzaSyD2aesWTqcU3wW94ELZwREjfePGhNTn8oc';
 const FUSION_TABLE_ID = '1rEpWpRmNXxx_HqU33a0MMA_NBYhaDOI_Dso3_DoP';
 
 const MAP_CENTER = {
@@ -37,24 +33,23 @@ class Map extends Component {
        })
     })
 
-    let regionLayers = this.props.regions.map(region => {
-      let regionStr = region.includes.join(',');
-      return ({
-        name: region.name,
-        layer: new google.maps.FusionTablesLayer({
-          query: {
-            select: 'geometry',
-            from: FUSION_TABLE_ID,
-            where: `'County Name' IN (${regionStr})`
-          }
-        })
+      let regionLayers = this.props.regions.map(region => {
+          let regionStr = region.includes.join(',');
+            return ({
+                name: region.name,
+                layer: new google.maps.FusionTablesLayer({
+                query: {
+                            select: 'geometry',
+                            from: FUSION_TABLE_ID,
+                            where: `'County Name' IN (${regionStr})`
+                }
+            })
       })
     })
 
     countyLayers.forEach(layerObj => layerObj.layer.setMap(null));
     regionLayers.forEach(layerObj => layerObj.layer.setMap(null));
-
-    this.state = {countyLayers: countyLayers, regionLayers: regionLayers};
+    this.setState = {countyLayers: countyLayers, regionLayers: regionLayers};
   }
 
   setCountyLayers = () => {
@@ -97,21 +92,16 @@ class Map extends Component {
             <div className={classes.MapContainer}>
                 <div ref="map" className={classes.Map}></div>
             </div>
-
-            <div className={classes.ColGroup} >
-              <ColGroup
-                elems={this.state.counties}
-                handleToggleCounty={this.handleToggleCounty} />
-            </div>
-
-            <div className={classes.RowGroup} >
-              <RowGroup
-                elems={this.state.regions}
-                handleToggleRegion={this.handleToggleRegion} />
-            </div>
         </div>
      */
   }
 }
 
-export default Map;
+function mapStateToProps(state) {
+    return {
+        counties: state.counties,
+        regions: state.regions
+    }
+}
+
+export default connect(mapStateToProps)(Map);
