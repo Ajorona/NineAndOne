@@ -2,29 +2,10 @@
 .Display {
     height: 700px;
     width: 700px;
-    background-color: black;
+    /* background-color: black; */
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (max-device-width : 400px) {
-    .Display {
-        height: 200px;
-        width: 200px;
-        background-color: grey;
-    }
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    .Display {
-        height: 500px;
-        width: 500px;
-        background-color: black;
-    }
-}
-
-/* Hide Desktop buttons */
-@media (max-width: 700px) {
+@media (min-width: 769px) {
     .DesktopButtons {
         display: none;
     }
