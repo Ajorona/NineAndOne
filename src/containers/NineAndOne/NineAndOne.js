@@ -50,7 +50,7 @@ class NineAndOne extends Component {
         this.setState({modalOpen: false});
     }
 
-    closeSideDrawer = () => {
+    closeSideDrawerHandler = () => {
         this.setState({sideDrawerOpen: false});
     }
 
@@ -67,7 +67,7 @@ class NineAndOne extends Component {
                     drawerClickHandler={this.drawerToggleClickHandler}
                     modalOpen={this.openModalHandler} />
 
-                <SideDrawer show={this.state.sideDrawerOpen} close={this.closeSideDrawer}>
+                <SideDrawer show={this.state.sideDrawerOpen} close={this.closeSideDrawerHandler}>
                         <ColGroup elems={this.props.counties} toggle={this.props.onCountyClick} />
                         <hr />
                         <ColGroup elems={this.props.regions} toggle={this.props.onRegionClick} />

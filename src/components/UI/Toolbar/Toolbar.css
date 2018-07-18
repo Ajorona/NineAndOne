@@ -7,6 +7,10 @@
     height: 56px;
 }
 
+.Active {
+    color: black;
+}
+
 .ToolbarNav {
     display: flex;
     height: 100%;
