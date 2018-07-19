@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './SideDrawer.css';
 
-import Aux from '../../../hoc/Aux/Aux';
 
 const SideDrawer = props => {
     let drawerClasses = `${classes.SideDrawer}`;

@@ -4,8 +4,8 @@ import classes from './Map.css';
 
 /* global google */
 
-// const MAP_API_KEY = 'AIzaSyDBp5HKeZtn-TnCjdOYtUOvQYK1K86QIBc';
-// const FUSION_API_KEY = 'AIzaSyD2aesWTqcU3wW94ELZwREjfePGhNTn8oc';
+const MAP_API_KEY = 'AIzaSyDBp5HKeZtn-TnCjdOYtUOvQYK1K86QIBc';
+const FUSION_API_KEY = 'AIzaSyD2aesWTqcU3wW94ELZwREjfePGhNTn8oc';
 const FUSION_TABLE_ID = '1rEpWpRmNXxx_HqU33a0MMA_NBYhaDOI_Dso3_DoP';
 
 const MAP_CENTER = {
@@ -16,7 +16,7 @@ const MAP_CENTER = {
 class Map extends Component {
   constructor(props) {
     super(props);
-    // this.initLayers();
+    this.initLayers();
   }
 
   initLayers = () => {
@@ -54,7 +54,7 @@ class Map extends Component {
 
   setCountyLayers = () => {
     this.props.counties.forEach(county => {
-      let layerObj = this.state.countyLayers.find(layer => layer.name === county.name);
+      let layerObj = this.props.countyLayers.find(layer => layer.name === county.name);
       if (county.active) {
         layerObj.layer.setMap(this.map);
       } else {
@@ -65,7 +65,7 @@ class Map extends Component {
 
   setRegionLayers = () => {
     this.props.regions.forEach(region => {
-      let layerObj = this.state.regionLayers.find(layer => layer.name === region.name);
+      let layerObj = this.props.regionLayers.find(layer => layer.name === region.name);
       if (region.active) {
         layerObj.layer.setMap(this.map);
       } else {
@@ -74,26 +74,26 @@ class Map extends Component {
     })
   }
 
-  // componentDidMount() {
-  //   this.map = new google.maps.Map(this.refs.map, {
-  //     center: MAP_CENTER,
-  //     zoom: 8
-  //   });
-  // }
-  //
-  // componentDidUpdate(prevProps) {
-  //   this.setCountyLayers();
-  //   this.setRegionLayers();
-  // }
+  componentDidMount() {
+    this.map = new google.maps.Map(this.refs.map, {
+      center: MAP_CENTER,
+      zoom: 8
+    });
+  }
+
+  componentDidUpdate(prevProps) {
+    this.setCountyLayers();
+    this.setRegionLayers();
+  }
 
   render() {
-    return ( <h2>Map</h2> );
-        /* <div>
+    return (
+        <div>
             <div className={classes.MapContainer}>
                 <div ref="map" className={classes.Map}></div>
             </div>
         </div>
-     */
+    );
   }
 }
 

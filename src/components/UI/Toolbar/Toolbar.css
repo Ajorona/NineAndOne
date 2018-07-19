@@ -5,6 +5,7 @@
     width: 100%;
     background: DarkSlateBlue;
     height: 56px;
+    z-index: 1;
 }
 
 .Active {

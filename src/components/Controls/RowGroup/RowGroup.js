@@ -7,7 +7,7 @@ const RowGroup = (props) => {
       {props.elems.map(elem =>
         <Control
           active={elem.active}
-          vertical={false}
+          Blue={false}
           key={elem.name}
           label={elem.name}
           toggle={() => props.toggle(elem.name)} />

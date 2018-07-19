@@ -6,8 +6,8 @@ import classes from './Control.css';
 const Control = (props) => {
   let customActive = props.active ? classes.Active : "";
   let bootstrapActive = props.active ? "active" : "";
-  let orientationColor = props.vertical ? classes.Vertical : classes.Horizontal;
-  let style = `${bootstrapActive} ${customActive} ${orientationColor}`;
+  let color = props.Blue ? classes.Blue : classes.Green;
+  let style = `${bootstrapActive} ${customActive} ${color}`;
 
   return (
     <button className={`btn ${style}`} onClick={props.toggle}>{props.label}</button>

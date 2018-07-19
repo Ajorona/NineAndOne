@@ -1,14 +1,9 @@
-.Horizontal {
+.Green {
     background-color: DarkGreen;
     color: Snow;
 }
 
-.Vertical {
+.Blue {
     background-color: DarkSlateBlue;
     color: Snow;
-}
-
-.Active {
-    background-color: Snow;
-    color: DarkSlateGray;
 }

@@ -42,7 +42,7 @@ class Toolbar extends Component {
                                                    to={link.path}
                                                    className={this.state.active === link.name ? classes.Active : '' }
                                                    onClick={() => this.activateButton(link.name)}
-                                                   key= {link.name}>
+                                                   key={link.name}>
                                                    {link.name}
                                                 </NavLink>
                                             </li>
