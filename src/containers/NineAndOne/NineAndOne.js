@@ -91,10 +91,11 @@ class NineAndOne extends Component {
                     </div>
 
                     <div>
-                        <div className="row">
+                        <div className="row justify-content-center">
                             <RowGroup elems={this.props.counties} toggle={this.props.onCountyClick} />
                         </div>
-                        <div className="row">
+                        <div className={classes.Spacer} />
+                        <div className="row justify-content-center">
                             <RowGroup elems={this.props.regions} toggle={this.props.onRegionClick} />
                         </div>
                     </div>

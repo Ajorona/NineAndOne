@@ -1,6 +1,6 @@
 
 .Display {
-    height: 700px;
+    height: 500px;
     width: 700px;
     /* background-color: black; */
 }
@@ -9,4 +9,13 @@
     .DesktopButtons {
         display: none;
     }
+}
+
+.Spacer {
+    width: 70%;
+    height: 3px;
+    background: grey;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
