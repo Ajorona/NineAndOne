@@ -9,7 +9,7 @@ const regions = [
                          ];
 
 const  toggleRegion = (regionName, state) => {
-     let regions = [...this.state];
+     let regions = [...state];
      let region = regions.find(region => region.name === regionName);
      region.active = !region.active;
      return regions

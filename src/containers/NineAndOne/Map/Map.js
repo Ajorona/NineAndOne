@@ -4,20 +4,15 @@ import classes from './Map.css';
 
 /* global google */
 
-const MAP_API_KEY = 'AIzaSyDBp5HKeZtn-TnCjdOYtUOvQYK1K86QIBc';
-const FUSION_API_KEY = 'AIzaSyD2aesWTqcU3wW94ELZwREjfePGhNTn8oc';
 const FUSION_TABLE_ID = '1rEpWpRmNXxx_HqU33a0MMA_NBYhaDOI_Dso3_DoP';
 
+// San Francisco
 const MAP_CENTER = {
   lat: 37.85,
   lng: -122.45
 };
 
 class Map extends Component {
-  constructor(props) {
-    super(props);
-    this.initLayers();
-  }
 
   initLayers = () => {
     let countyLayers = this.props.counties.map(county => {
@@ -49,12 +44,12 @@ class Map extends Component {
 
     countyLayers.forEach(layerObj => layerObj.layer.setMap(null));
     regionLayers.forEach(layerObj => layerObj.layer.setMap(null));
-    this.setState = {countyLayers: countyLayers, regionLayers: regionLayers};
+    this.setState({countyLayers: countyLayers, regionLayers: regionLayers});
   }
 
   setCountyLayers = () => {
     this.props.counties.forEach(county => {
-      let layerObj = this.props.countyLayers.find(layer => layer.name === county.name);
+      let layerObj = this.state.countyLayers.find(layer => layer.name === county.name);
       if (county.active) {
         layerObj.layer.setMap(this.map);
       } else {
@@ -65,7 +60,7 @@ class Map extends Component {
 
   setRegionLayers = () => {
     this.props.regions.forEach(region => {
-      let layerObj = this.props.regionLayers.find(layer => layer.name === region.name);
+      let layerObj = this.state.regionLayers.find(layer => layer.name === region.name);
       if (region.active) {
         layerObj.layer.setMap(this.map);
       } else {
@@ -75,6 +70,7 @@ class Map extends Component {
   }
 
   componentDidMount() {
+    this.initLayers();
     this.map = new google.maps.Map(this.refs.map, {
       center: MAP_CENTER,
       zoom: 8
@@ -87,6 +83,7 @@ class Map extends Component {
   }
 
   render() {
+
     return (
         <div>
             <div className={classes.MapContainer}>

@@ -32,6 +32,13 @@ class NineAndOne extends Component {
         sideDrawerOpen: false
     };
 
+    links = [
+                 {path: '/map', name: 'Map'},
+                 {path: '/microclimate', name: 'MicroClimate'},
+                 {path: '/news', name: 'News'},
+                 {path: '/statistics', name: 'Statistics'},
+             ];
+
     drawerToggleClickHandler = () => {
         this.setState( (prevState) => {
             return { sideDrawerOpen: !prevState.sideDrawerOpen};
@@ -65,7 +72,21 @@ class NineAndOne extends Component {
             <div>
                 <Toolbar
                     drawerClickHandler={this.drawerToggleClickHandler}
-                    modalOpen={this.openModalHandler} />
+                    modalOpen={this.openModalHandler}>
+                    <ul>
+                        {this.links.map( (link) => {
+                            return <li>
+                                           <NavLink
+                                               to={link.path}
+                                               className={this.state.active === link.name ? classes.Active : '' }
+                                               onClick={() => this.activateButton(link.name)}
+                                               key={link.name}>
+                                               {link.name}
+                                            </NavLink>
+                                        </li>
+                        })};
+                    </ul>
+                </Toolbar>
 
                 <SideDrawer show={this.state.sideDrawerOpen} close={this.closeSideDrawerHandler}>
                         <ColGroup elems={this.props.counties} toggle={this.props.onCountyClick} />

@@ -14,7 +14,7 @@ const counties = [
                             ];
 
 const toggleCounty = (countyName, state) => {
-    let counties = [...this.state];
+    let counties = [...state];
     let county = counties.find(county => county.name === countyName);
     county.active = !county.active;
     return counties;
