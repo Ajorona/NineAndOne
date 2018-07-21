@@ -80,7 +80,7 @@ class NineAndOne extends Component {
                                                {link.name}
                                             </NavLink>
                                         </li>
-                        })};
+                        })}
                     </ul>
                 </Toolbar>
 
