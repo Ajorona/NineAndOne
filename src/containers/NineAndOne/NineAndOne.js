@@ -20,8 +20,6 @@ import Instructions from '../../components/UI/Modal/Instructions';
 
 // Pages
 import Map from './Map/Map';
-import News from './News/News';
-import Statistics from './Statistics/Statistics';
 import MicroClimate from './MicroClimate/MicroClimate';
 
 import classes from './NineAndOne.css';
@@ -33,11 +31,9 @@ class NineAndOne extends Component {
     };
 
     links = [
-                 {path: '/map', name: 'Map'},
-                 {path: '/microclimate', name: 'MicroClimate'},
-                 {path: '/news', name: 'News'},
-                 {path: '/statistics', name: 'Statistics'},
-             ];
+                   {path: '/map', name: 'Map'},
+                   {path: '/microclimate', name: 'MicroClimate'}
+                ];
 
     drawerToggleClickHandler = () => {
         this.setState( (prevState) => {
@@ -105,8 +101,6 @@ class NineAndOne extends Component {
                             <Switch>
                                 <Route path="/" exact component={Map} />
                                 <Route path="/microclimate" component={MicroClimate} />
-                                <Route path="/news" component={News} />
-                                <Route path="/statistics" component={Statistics} />
                             </Switch>
                         </div>
                     </div>
