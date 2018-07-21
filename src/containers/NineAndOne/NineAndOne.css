@@ -11,6 +11,14 @@
     }
 }
 
+.ButtonCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 25px;
+}
+
 .Spacer {
     width: 70%;
     height: 3px;

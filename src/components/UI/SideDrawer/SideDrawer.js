@@ -10,8 +10,12 @@ const SideDrawer = props => {
 
     return (
             <nav className={drawerClasses}>
-                <button type="button" onClick={props.close}>&times;</button>
-                {props.children}
+                <div className={classes.CloseContainer}>
+                    <button type="button" onClick={props.close}>&times;</button>
+                </div>
+                <div>
+                    {props.children}
+                </div>
             </nav>
     );
 };

@@ -5,7 +5,7 @@ import classes from './Control.css';
 
 const Control = (props) => {
   let active = props.active ? classes.Active : "";
-  let color = props.Blue ? classes.Blue : classes.Green;
+  let color = props.blue ? classes.Blue : classes.Green;
   let style = `${active} ${color}`;
 
   return (

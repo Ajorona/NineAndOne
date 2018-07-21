@@ -7,7 +7,7 @@ const ColGroup = (props) => {
       {props.elems.map(elem =>
         <Control
           active={elem.active}
-          Blue={true}
+          blue={props.blue}
           key={elem.name}
           label={elem.name}
           toggle={() => props.toggle(elem.name)} />

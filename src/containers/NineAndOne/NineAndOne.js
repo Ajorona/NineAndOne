@@ -85,9 +85,11 @@ class NineAndOne extends Component {
                 </Toolbar>
 
                 <SideDrawer show={this.state.sideDrawerOpen} close={this.closeSideDrawerHandler}>
-                        <ColGroup elems={this.props.counties} toggle={this.props.onCountyClick} />
+                    <div className={classes.ButtonCol} >
+                        <ColGroup elems={this.props.counties} toggle={this.props.onCountyClick} blue={true} />
                         <hr />
-                        <ColGroup elems={this.props.regions} toggle={this.props.onRegionClick} />
+                        <ColGroup elems={this.props.regions} toggle={this.props.onRegionClick} blue={false} />
+                    </div>
                 </SideDrawer>
 
                 <Modal show={this.state.modalOpen} close={this.closeModalHandler}>
@@ -107,11 +109,11 @@ class NineAndOne extends Component {
 
                     <div>
                         <div className="row justify-content-center">
-                            <RowGroup elems={this.props.counties} toggle={this.props.onCountyClick} />
+                            <RowGroup elems={this.props.counties} toggle={this.props.onCountyClick} blue={false}/>
                         </div>
                         <div className={classes.Spacer} />
                         <div className="row justify-content-center">
-                            <RowGroup elems={this.props.regions} toggle={this.props.onRegionClick} />
+                            <RowGroup elems={this.props.regions} toggle={this.props.onRegionClick} blue={true}/>
                         </div>
                     </div>
                 </main>
