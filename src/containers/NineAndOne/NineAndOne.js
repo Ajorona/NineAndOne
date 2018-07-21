@@ -89,6 +89,9 @@ class NineAndOne extends Component {
                         <ColGroup elems={this.props.counties} toggle={this.props.onCountyClick} blue={true} />
                         <hr />
                         <ColGroup elems={this.props.regions} toggle={this.props.onRegionClick} blue={false} />
+                        <div style={{marginTop: 15}}>
+                            <button onClick={ this.closeSideDrawerHandler} className="btn btn-success">Go</button>
+                        </div>
                     </div>
                 </SideDrawer>
 
